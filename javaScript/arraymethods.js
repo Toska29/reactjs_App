@@ -67,8 +67,27 @@ function femaleGender(obj){
 // console.log(objArray.filter(femaleGender))
 
 function objectAge(obj){
-   return obj['age'] = obj.firstname.length + obj.lastname.length
+   return obj.age = obj.firstname.length + obj.lastname.length
 }
 
 console.log(objArray.map(objectAge))
 console.log(objArray)
+
+const ages = [21,18,42,40,64,63,34];
+const maxAge = ages.reduce((max, age) => {
+console.log(`${age} > ${max} = ${age > max}`);
+return (age > max ? age : max)
+}, 0)
+console.log('maxAge', maxAge);
+
+
+const colors = ["red", "red", "green", "blue", "green"];
+const distinctColors = colors.reduce(
+(distinct, color) => {
+console.log(distinct.indexOf(color))
+return (distinct.indexOf(color) !== -1) ?
+distinct :
+[...distinct, color]},
+[]
+)
+console.log(distinctColors)
